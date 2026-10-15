@@ -1,0 +1,213 @@
+# APEX // APPS - safety classification for preinstalled packages.
+# <pattern> <level> <note>
+# level: safe = removing it only loses that feature
+#        care = something visible may stop working
+#        keep = system depends on it, APEX refuses to touch it
+# Patterns match a whole package name, or a prefix when they end with *.
+# Longer patterns win over shorter ones.
+
+# ---- never touch: the system will not boot or will break badly ----
+android keep Android framework
+com.android.systemui keep System UI, status bar and navigation
+com.android.settings keep Settings
+com.android.phone keep Telephony
+com.android.server.telecom keep Call handling
+com.android.providers.settings keep Settings storage
+com.android.providers.media* keep Media storage
+com.android.providers.contacts keep Contacts storage
+com.android.providers.telephony keep SMS and APN storage
+com.android.providers.downloads keep Download manager
+com.android.providers.calendar keep Calendar storage
+com.android.providers.userdictionary keep User dictionary
+com.android.permissioncontroller keep Permission dialogs
+com.android.packageinstaller keep App installer
+com.google.android.packageinstaller keep App installer
+com.android.shell keep ADB shell
+com.android.externalstorage keep Storage access
+com.android.documentsui keep File picker
+com.android.mtp keep USB file transfer
+com.android.keychain keep Credential storage
+com.android.certinstaller keep Certificate installer
+com.android.location.fused keep Location provider
+com.android.bluetooth keep Bluetooth
+com.android.nfc keep NFC
+com.android.wifi* keep Wi-Fi
+com.android.networkstack* keep Network stack
+com.android.cellbroadcast* keep Emergency alerts
+com.android.emergency keep Emergency information
+com.android.inputdevices keep Physical keyboards
+com.android.se keep Secure element
+com.android.dynsystem keep Dynamic system updates
+com.android.ons keep Opportunistic network
+com.android.carrierconfig keep Carrier settings
+com.android.sharedstoragebackup keep Storage backup
+com.android.storagemanager keep Storage manager
+com.qualcomm.qti.telephonyservice keep Telephony service
+com.mediatek.ims* keep VoLTE and IMS
+com.mediatek.simprocessor keep SIM handling
+com.mediatek.location* keep Location provider
+com.mediatek.engineermode keep Engineer mode
+com.android.stk keep SIM toolkit
+com.miui.securitycore keep HyperOS core, Dual apps depend on it
+com.miui.core keep HyperOS core framework
+com.miui.rom keep HyperOS ROM resources
+com.miui.system keep HyperOS system
+com.xiaomi.misettings keep Xiaomi settings pages
+com.miui.home keep Launcher
+com.miui.packageinstaller keep App installer
+com.lbe.security.miui keep Permission manager
+com.miui.contentextension keep Text selection services
+com.android.updater keep System updates
+com.google.android.gms keep Google Play services
+com.google.android.gsf keep Google services framework
+com.android.vending keep Google Play Store
+com.google.android.webview keep System WebView
+com.android.webview keep System WebView
+com.google.android.permissioncontroller keep Permission dialogs
+com.android.providers.blockednumber keep Blocked numbers
+com.android.cts* keep Compatibility test hooks
+com.android.egg keep Easter egg
+com.android.theme* keep System themes
+com.android.systemui.* keep System UI components
+com.android.internal.* keep Internal system components
+com.android.hotspot2* keep Wi-Fi Passpoint
+com.android.ims* keep VoLTE and IMS
+com.android.simappdialog keep SIM app dialog
+com.android.carrierdefaultapp keep Carrier default app
+com.android.proxyhandler keep Proxy handler
+com.android.bips keep Default print service
+com.android.printspooler keep Printing
+com.android.managedprovisioning keep Work profile setup
+com.android.companiondevicemanager keep Companion device pairing
+com.android.bluetoothmidiservice keep Bluetooth MIDI
+com.android.htmlviewer keep HTML viewer
+com.android.statementservice keep App link verification
+com.android.vpndialogs keep VPN dialogs
+com.android.pacprocessor keep Proxy auto-config
+com.android.backupconfirm keep Backup confirmation
+com.android.localtransport keep Local backup transport
+com.google.android.providers.media.module keep Media storage
+com.google.android.captiveportallogin keep Captive portal sign-in
+com.google.android.networkstack* keep Network stack
+com.google.android.ext.services keep System services
+com.google.android.ext.shared keep Shared system library
+com.google.android.modulemetadata keep Module metadata
+com.google.mainline.* keep Mainline modules
+com.google.android.adservices* keep Ad services framework
+
+# ---- care: a visible feature stops working, but the system stays fine ----
+com.android.camera* care Camera app
+com.miui.camera care Camera app
+com.android.gallery3d care Gallery
+com.miui.gallery care Gallery
+com.android.deskclock care Clock and alarms
+com.android.calculator2 care Calculator
+com.miui.calculator care Calculator
+com.android.calendar care Calendar app
+com.miui.calendar care Calendar app, also shows ads
+com.android.contacts care Contacts app
+com.android.dialer care Phone app
+com.android.mms care Messaging app
+com.android.soundrecorder care Sound recorder
+com.miui.notes care Notes
+com.miui.compass care Compass
+com.miui.weather2 care Weather
+com.miui.screenrecorder care Screen recorder
+com.android.fileexplorer care File manager
+com.miui.player care Music player
+com.miui.videoplayer care Video player
+com.xiaomi.scanner care Scanner
+com.miui.bugreport care Feedback, also collects logs
+com.xiaomi.market care Xiaomi app store, also updates system apps
+com.xiaomi.account care Xiaomi account, cloud and Find device need it
+com.miui.cloudservice care Xiaomi cloud sync
+com.miui.cloudbackup care Xiaomi cloud backup
+com.miui.newhome care Xiaomi feed
+com.miui.personalassistant care App vault on the home screen
+com.android.thememanager care Themes
+com.miui.aod care Always-on display
+com.miui.freeform care Floating windows
+com.miui.voiceassist care Voice assistant
+com.google.android.apps.* care Google app
+com.google.android.gm care Gmail
+com.google.android.youtube care YouTube
+com.google.android.googlequicksearchbox care Google app and Assistant
+com.google.android.inputmethod.* care Gboard keyboard, keep one keyboard installed
+com.miui.inputmethod care Keyboard, keep one keyboard installed
+com.sohu.inputmethod.sogou.xiaomi care Keyboard, keep one keyboard installed
+com.google.android.tts care Text to speech
+com.google.android.marvin.talkback care Accessibility screen reader
+com.android.traceur care System tracing for developers
+com.android.wallpaper* care Wallpapers
+com.google.android.wallpaper* care Wallpapers
+com.miui.miwallpaper care Wallpaper engine
+com.android.quicksearchbox care Search box
+com.miui.contentcatcher care Content suggestions
+com.miui.touchassistant care Quick ball
+com.miui.screenshot care Screenshots
+
+# ---- safe: analytics, ads, demos, and vendor extras ----
+com.miui.analytics safe Xiaomi analytics
+com.xiaomi.joyose safe Xiaomi performance and telemetry service
+com.miui.msa.global safe Xiaomi ad framework
+com.miui.systemAdSolution safe Xiaomi ad framework
+com.miui.daemon safe Xiaomi logging daemon
+com.miui.hybrid* safe Quick apps framework
+com.miui.yellowpage safe Caller yellow pages
+com.xiaomi.mipicks safe App recommendations
+com.miui.systemui.plugin* safe Optional System UI plugins
+com.miui.android.fashiongallery safe Wallpaper carousel
+com.mi.globalminusscreen safe App vault feed
+com.mi.android.globalFileexplorer safe File manager with ads
+com.miui.global.packageinstaller safe Alternative installer
+com.miui.cleanmaster safe Cleaner
+com.miui.securityadd safe Security extras
+com.miui.vipaccount safe Mi community
+com.xiaomi.mi_connect_service safe Device sharing
+com.xiaomi.miplay* safe Mi Play casting
+com.milink.service safe MiLink casting
+com.xiaomi.glgm safe Game center
+com.xiaomi.gamecenter* safe Game center
+com.miui.gamebooster safe Game turbo
+com.miui.huanji safe Phone clone
+com.miui.tsmclient safe Transit cards
+com.miui.virtualsim safe Virtual SIM
+com.android.browser safe Stock browser
+com.mi.webkit.core safe Mi browser core
+com.xiaomi.simactivate.service safe SIM activation
+com.miui.enbbs safe Mi community
+com.miui.carlink safe Car connectivity
+com.miui.micloudsync safe Cloud sync helper
+com.miui.face* safe Face unlock extras
+com.google.android.videos safe Google TV
+com.google.android.music safe Google Play Music
+com.google.android.apps.books safe Play Books
+com.google.android.apps.magazines safe Google News
+com.google.android.feedback safe Google feedback
+com.google.android.partnersetup safe Google partner setup
+com.google.android.printservice.recommendation safe Print service suggestions
+com.google.android.syncadapters.* safe Google sync adapters
+com.google.android.onetimeinitializer safe One-time setup
+com.google.android.setupwizard safe Setup wizard, only runs on a fresh device
+com.android.bookmarkprovider safe Browser bookmarks
+com.android.dreams.* safe Screen savers
+com.android.wallpaperbackup safe Wallpaper backup
+com.android.musicfx safe Audio effects
+com.android.providers.partnerbookmarks safe Partner bookmarks
+com.facebook.* safe Preinstalled Facebook stubs
+com.netflix.partner.activation safe Netflix activation stub
+com.booking* safe Preinstalled Booking stub
+com.ebay.* safe Preinstalled eBay stub
+com.opera.* safe Preinstalled Opera stub
+com.amazon.appmanager safe Amazon stub
+com.agoda.* safe Preinstalled Agoda stub
+com.aliexpress.* safe Preinstalled AliExpress stub
+com.alibaba.* safe Preinstalled Alibaba stub
+com.tripadvisor.* safe Preinstalled TripAdvisor stub
+com.spotify.* safe Preinstalled Spotify stub
+com.linkedin.android safe Preinstalled LinkedIn stub
+com.mediatek.mtklogger safe MediaTek logger
+com.mediatek.duraspeed safe MediaTek background limiter
+com.debug.loggerui safe Debug logger
+com.fingerprints.* safe Fingerprint vendor extras
+com.dsi.ant* safe ANT+ radio

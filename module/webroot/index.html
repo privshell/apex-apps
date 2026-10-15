@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>APEX // APPS</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <div class="logo"><svg viewBox="0 0 24 24"><path d="M12 3 3 18h18L12 3Z"/><path d="M12 9.5 8.2 16h7.6L12 9.5Z"/></svg></div>
+    <div><div class="title">APEX <span>//</span> APPS</div><div class="sub" id="subline">Loading...</div></div>
+  </div>
+  <button class="pill" id="userPill">User 0</button>
+</header>
+
+<main>
+  <!-- APPS -->
+  <section class="tab active" id="tab-apps">
+    <div class="search"><svg viewBox="0 0 24 24"><path d="m21 21-4.3-4.3M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z"/></svg><input id="q" placeholder="Search apps or package names" autocomplete="off"></div>
+    <div class="seg" id="appFilter">
+      <button data-f="all" class="on">All</button><button data-f="pre">Preinstalled</button><button data-f="user">Installed</button><button data-f="changed">Changed</button>
+    </div>
+    <div class="tags" id="lvbar"></div>
+    <div id="notice"></div>
+    <div class="selbar" id="selbar">
+      <span id="selCount">0 selected</span>
+      <div class="selacts">
+        <button class="ghost" data-bulk="freeze">Freeze</button>
+        <button class="ghost" data-bulk="disable">Disable</button>
+        <button class="ghost" data-bulk="enable">Enable</button>
+        <button class="ghost" id="selClear">Clear</button>
+      </div>
+    </div>
+    <div id="appList" class="list"></div>
+  </section>
+
+  <!-- REVIEW -->
+  <section class="tab" id="tab-review">
+    <p class="hint">Preinstalled apps grouped by what happens if you switch them off. APEX reads this from its own list and never touches anything marked as required by the system.</p>
+    <div id="reviewBox"></div>
+  </section>
+
+  <!-- SNAPSHOTS -->
+  <section class="tab" id="tab-snaps">
+    <div class="box">
+      <h3>Snapshots</h3>
+      <p class="hint">A snapshot records which apps are on or off right now. Restoring one puts every app back exactly as it was, so you can try things and walk them back.</p>
+      <div class="toolbar"><input class="f" id="snapName" placeholder="Name (letters, numbers, - and _)"><button class="primary" id="snapNew">Take snapshot</button></div>
+    </div>
+    <div id="snapList" class="list"></div>
+  </section>
+
+  <!-- BACKUPS -->
+  <section class="tab" id="tab-backups">
+    <p class="hint">Backups are written to Download/APEX as a single archive holding the app files and, if you ask for it, its data.</p>
+    <div id="bkList" class="list"></div>
+  </section>
+
+  <!-- SETTINGS -->
+  <section class="tab" id="tab-settings">
+    <div id="settingsBox"></div>
+  </section>
+</main>
+
+<nav class="bottom">
+  <button data-tab="apps" class="on"><svg viewBox="0 0 24 24"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/></svg>Apps</button>
+  <button data-tab="review"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>Review</button>
+  <button data-tab="snaps"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>Snapshots</button>
+  <button data-tab="backups"><svg viewBox="0 0 24 24"><path d="M21 8v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8M2 3h20v5H2zM10 12h4"/></svg>Backups</button>
+  <button data-tab="settings"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="9" cy="6" r="2"/><circle cx="15" cy="12" r="2"/><circle cx="8" cy="18" r="2"/></svg>Settings</button>
+</nav>
+
+<div class="sheet-bg" id="sheetBg"><div class="sheet" id="sheet"></div></div>
+<div class="toast" id="toast"></div>
+<div class="busy" id="busy"><span></span><i id="busyTxt">Working</i></div>
+<script src="app.js"></script>
+<script src="support.js"></script>
+</body>
+</html>

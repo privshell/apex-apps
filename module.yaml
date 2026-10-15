@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/KernelSU-Modules/tools/main/schemas/module.schema.json
+# KernelSU Modules metadata. Reference: https://developers.kernelsu.org/docs/module-yaml
+# version / versionCode come from module/module.prop inside the release ZIP, not from this file.
+schemaVersion: 1
+id: apex_apps
+name: APEX // APPS
+summary: App manager with a full WebUI. Review preinstalled apps against a safety list, disable or freeze them with one-tap snapshot restore, control background permissions and battery policy per app, and back up apps with their data. No companion app.
+description: README.md
+license: MIT
+homepage: https://github.com/kreza6173-pixel/apex-apps
+support: https://github.com/kreza6173-pixel/apex-apps/issues
+tags: [apps, debloat, privacy, battery, webui, tools]
+metamodule: false
+
+authors:
+  - name: kreza6173-pixel
+    url: https://github.com/kreza6173-pixel
+
+compatibility:
+  androidMinApi: 28
+  architectures: [arm64-v8a, armeabi-v7a, x86_64, x86]
+
+release:
+  assetPattern: "apex_apps-*.zip"

@@ -1,0 +1,6 @@
+id=apex_apps
+name=APEX // APPS
+version=v1.0.0
+versionCode=100
+author=kreza6173-pixel
+description=App manager with WebUI. Review and disable preinstalled apps with snapshot restore, freeze apps, control background permissions, back up app data, and tune battery policy per app.
