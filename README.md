@@ -57,7 +57,7 @@ Hide is `pm uninstall -k --user <id>`, the path Android itself uses, so `pm inst
 Some HyperOS and OneUI builds refuse to disable certain system apps whatever you do. APEX reports those as failures instead of pretending they worked.
 
 ## Install
-Install from [KernelSU Modules](https://modules.kernelsu.org) or flash the ZIP from [Releases](https://github.com/kreza6173-pixel/apex-apps/releases) in your root manager, then open the WebUI from the module card.
+Install from [KernelSU Modules](https://modules.kernelsu.org) or flash the ZIP from [Releases](https://github.com/privshell/apex-apps/releases) in your root manager, then open the WebUI from the module card.
 
 Installing changes nothing on its own.
 
@@ -83,13 +83,13 @@ Everything lives in `/data/adb/apex` and survives module updates.
 ## Notes
 - Restoring app data across different Android versions often fails. The app files restore fine either way.
 - Freezing an app you actually use will make its notifications late. Freeze is for apps you want running on your terms only.
-- Pairs with [AEGIS // FIREWALL](https://github.com/kreza6173-pixel/aegis-firewall) if you also want per-app network rules.
+- Pairs with [AEGIS // FIREWALL](https://github.com/privshell/aegis-firewall) if you also want per-app network rules.
 
 ## Releasing (maintainers)
 Bump `version` and `versionCode` in `module/module.prop`, then run the **Release** workflow from the Actions tab (or push a `v*` tag). Copy `docs/release.yml` to `.github/workflows/release.yml` once to enable it.
 
 ## Support
-APEX is free and open source, built in spare time. If it saved you time, you can [support the work with a small crypto donation](https://github.com/kreza6173-pixel/kreza6173-pixel/blob/main/DONATE.md) (USDT on TRC20, or USDC / SOL on Solana). Starring the repo or opening a clear issue helps just as much.
+APEX is free and open source, built in spare time. If it saved you time, you can [support the work with a small crypto donation](https://github.com/privshell/privshell/blob/main/DONATE.md) (USDT on TRC20, or USDC / SOL on Solana). Starring the repo or opening a clear issue helps just as much.
 
 ## License
 MIT
