@@ -386,7 +386,7 @@ async function renderSettings() {
     <span>Package manager</span><span>${yn(e.pm)}</span><span>App ops</span><span>${yn(e.appops)}</span><span>Standby buckets</span><span>${yn(e.bucket)}</span>
     <span>Battery whitelist</span><span>${yn(e.doze)}</span><span>Archiving</span><span>${yn(e.tar)}</span>
     <span>Users</span><span>${esc(e.users_list || '0')}</span><span>Android API</span><span>${esc(e.sdk || '-')}</span><span>Device</span><span>${esc(e.device || '-')}</span></div></div>
-  <div class="box"><h3>About</h3><div class="kv"><span>Version</span><span>v1.0.0</span><span>Author</span><span>kreza6173-pixel</span><span>Companion</span><span>Pairs with AEGIS // FIREWALL for per-app network rules</span></div></div>`;
+  <div class="box"><h3>About</h3><div class="kv"><span>Version</span><span>v1.0.0</span><span>Author</span><span>privshell</span><span>Companion</span><span>Pairs with AEGIS // FIREWALL for per-app network rules</span></div></div>`;
   const box = $('#settingsBox');
   $$('[data-set]', box).forEach(i => i.onchange = () => setSetting(i.dataset.set, i.checked ? '1' : '0'));
   $('#sd', box).onchange = e2 => setSetting('SCREEN_DELAY', e2.target.value);
